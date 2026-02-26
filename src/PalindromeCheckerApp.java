@@ -11,18 +11,21 @@ Starts execution from the main
 
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-       String input ="madam";
+       String word ="madam";
        boolean isPalindrome =true;
-       for(int i = 0;i < input.length() / 2; i++) {
-           if (input.charAt(i) != input.charAt(input.length() - 1 - i)){
+       int n=word.length() - 1;
+       int start=0;
+       for(int i = n;i > 0 ; i--) {
+           if (word.charAt(i) != word.charAt(start)){
                isPalindrome = false;
                break;
            }
+           start++;
        }
        if(isPalindrome) {
-           System.out.println(input + " is a palindrome.");
+           System.out.println(word + " is a palindrome.");
        } else {
-           System.out.println(input + " is not a palindrome.");
+           System.out.println(word + " is not a palindrome.");
        }
 
     }
